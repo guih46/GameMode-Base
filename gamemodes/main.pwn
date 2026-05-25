@@ -10,19 +10,16 @@
 #include "modules\core\database.inc"
 #include "modules\core\stocks.inc"
 #include "modules\core\animations.inc"
-#include "modules\server\auth\original_connect.inc"
-#include "modules\server\auth\original_registro.inc"
-#include "modules\server\auth\original_login.inc"
 
 main()
 {
 	print("\n----------------------------------");
-	print(" Original Load sussced");
+	print(" ServerName Load sussced");
 	print("----------------------------------\n");
 }
 
 public OnGameModeInit() {
-	SetGameModeText("Roleplay");
+	SetGameModeText("MODO-JOGO");
 	return true;
 }
 

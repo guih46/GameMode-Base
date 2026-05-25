@@ -8,18 +8,18 @@
 new MySQL:ServerDB;
 
 hook OnGameModeInit() {
-    OriginalDB = mysql_connect(hostname, username, password, database);
-    if (mysql_errno() || !OriginalDB) {
-        print("Original RP - Banco de Dados nao foi carregado com sussceso");
+    ServerDB = mysql_connect(hostname, username, password, database);
+    if (mysql_errno() || !ServerDB) {
+        print("SERVER NAME - Banco de Dados nao foi carregado com sussceso");
         SendRconCommand("exit");
         return true;
     }
 
-    mysql_query_file(OriginalDB, "SQL/Player.sql", false);
+    mysql_query_file(ServerDB, "SQL/Player.sql", false);
 	return true;
 }
 
 hook OnGameModeExit() {
-    mysql_close(OriginalDB);
+    mysql_close(ServerDB);
 	return true;
 }
